@@ -2,6 +2,7 @@ package com.devmumu.ecommerce.entity;
 
 import java.time.Instant;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import com.devmumu.ecommerce.enums.OrderStatus;
@@ -93,6 +94,13 @@ public class Order {
     public Payment getPayment() {
         return payment;
     }
+
+    public Set<OrderItem> getItems() {
+        return items;
+    }
     
+    public List<Product> getProducts(){
+        return items.stream().map(x -> x.getProduct()).toList();
+    }
     
 }
