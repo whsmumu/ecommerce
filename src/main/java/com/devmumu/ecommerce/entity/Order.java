@@ -1,6 +1,8 @@
 package com.devmumu.ecommerce.entity;
 
 import java.time.Instant;
+import java.util.HashSet;
+import java.util.Set;
 
 import com.devmumu.ecommerce.enums.OrderStatus;
 
@@ -12,6 +14,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -35,6 +38,9 @@ public class Order {
     @OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
     @JoinColumn(name = "payment_id")
     private Payment payment;
+
+    @OneToMany(mappedBy = "id.order")
+    private Set<OrderItem> items = new HashSet<>();
 
     public Order (){
 
