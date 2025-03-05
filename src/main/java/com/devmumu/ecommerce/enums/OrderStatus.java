@@ -1,4 +1,4 @@
-package com.devmumu.ecommerce.entity;
+package com.devmumu.ecommerce.enums;
 
 public enum OrderStatus {
     WATING_PAYMENT,

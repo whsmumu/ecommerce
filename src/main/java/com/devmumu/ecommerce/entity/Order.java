@@ -2,6 +2,8 @@ package com.devmumu.ecommerce.entity;
 
 import java.time.Instant;
 
+import com.devmumu.ecommerce.enums.OrderStatus;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
